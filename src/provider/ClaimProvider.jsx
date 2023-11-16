@@ -4,6 +4,8 @@ import { claimTheme } from "../theme";
 import { palette } from "../theme/palette";
 import { StorageService } from "../service/StorageService";
 
+// Provider should wrap inside the root file
+
 const ClaimProvider = ({ children }) => {
   const theme = useMemo(() => {
     const res = claimTheme(palette);
@@ -21,10 +23,10 @@ const ClaimProvider = ({ children }) => {
   );
   return (
     <ClaimManagementProvider
-      theme={theme}
-      clientOptions={clientOptions}
-      walletConnectProjectId="1e202c9116dfff483ed8b1c518d06495"
-      onAuthenticated={setToken}
+      theme={theme} // Theme customization
+      clientOptions={clientOptions} // Pass bearer token and api url
+      walletConnectProjectId="1e202c9116dfff483ed8b1c518d06495" // Wallet connect project id
+      onAuthenticated={setToken} // callback authentication
     >
         <>
             { children }
