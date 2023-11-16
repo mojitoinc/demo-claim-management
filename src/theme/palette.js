@@ -1,3 +1,5 @@
+// defines app colors
+
 export const palette = {
   fontFamily: {
     primary: "Sneak",
