@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.8.7",
-    "@mojito-inc/claim-management": "^1.0.2-beta.8",
+    "@mojito-inc/claim-management": "^1.0.2-beta.10",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.11",
     "@testing-library/jest-dom": "^5.17.0",

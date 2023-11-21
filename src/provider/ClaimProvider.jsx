@@ -16,8 +16,8 @@ const ClaimProvider = ({ children }) => {
   );
   const clientOptions = useMemo(
     () => ({
-      uri: "https://api-dev.mojito.xyz/query",
-      token: token ? `Token ${token}` : undefined,
+      uri: "https://api-sandbox.mojito.xyz/query",
+      token: token || undefined,
     }),
     [token]
   );
@@ -28,9 +28,9 @@ const ClaimProvider = ({ children }) => {
       walletConnectProjectId="1e202c9116dfff483ed8b1c518d06495" // Wallet connect project id
       onAuthenticated={setToken} // callback authentication
     >
-        <>
-            { children }
-        </>
+      <>
+        { children }
+      </>
     </ClaimManagementProvider>
   );
 };
