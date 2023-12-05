@@ -3,6 +3,7 @@ import { ClaimManagementProvider } from "@mojito-inc/claim-management";
 import { claimTheme } from "../theme";
 import { palette } from "../theme/palette";
 import { StorageService } from "../service/StorageService";
+import { config } from "../config";
 
 // Provider should wrap inside the root file
 
@@ -16,7 +17,7 @@ const ClaimProvider = ({ children }) => {
   );
   const clientOptions = useMemo(
     () => ({
-      uri: "https://api-sandbox.mojito.xyz/query",
+      uri: config.API_HOST_URL,
       token: token || undefined,
     }),
     [token]
@@ -25,7 +26,9 @@ const ClaimProvider = ({ children }) => {
     <ClaimManagementProvider
       theme={theme} // Theme customization
       clientOptions={clientOptions} // Pass bearer token and api url
-      walletConnectProjectId="1e202c9116dfff483ed8b1c518d06495" // Wallet connect project id
+      clientId={ config.CLIENT_ID }
+      activeChain={ config.ACTIVE_CHAIN_ID }
+      walletConnectProjectId={ config.WALLET_CONNECT_PROJECT_ID } // Wallet connect project id
       onAuthenticated={setToken} // callback authentication
     >
       <>
