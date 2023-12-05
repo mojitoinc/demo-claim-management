@@ -1,0 +1,36 @@
+// defines app colors
+
+export const palette = {
+  fontFamily: {
+    primary: "Sneak",
+    secondary: "Sneak Medium",
+    teritary: "Sneak Bold",
+  },
+  color: {
+    primary: "#fff",
+    secondary: "#6563FD",
+    teritary: "#A6FF00",
+    textColorPrimary: "#000",
+    textColorSecondary: "#fff",
+    headerBackground: "#000",
+    footerBackground: "#000",
+    inProgressColor: "#F98028",
+    inProgressBackground: "#FFFEC0",
+    grey: "#868b93",
+    error: "#BF1E18",
+    mobileHeaderBackground: "#2C3335",
+    paginationBackground: "#6563FD",
+    paginationSelectedPageColor: "#868B93",
+    cardBackground: "#F4F4F4",
+    cardTitle: "#8C939E",
+    cardLink: "#0703F7",
+    active: "#1BB82D",
+    accountBackgroundColor: "#C9C8FE",
+    placeholderColor: "#6C717A",
+    checkBoxColor: "#5C5C9B",
+    scrollBarGrey: "#D7D8DB",
+    scrollBarBackground: "#f1f1f1",
+    linkColor: "#6563FD",
+    deliveryBackgroundColor: "#FAFBFB",
+  },
+};
