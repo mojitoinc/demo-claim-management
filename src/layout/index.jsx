@@ -142,7 +142,7 @@ const AppLayout = () => {
         claimCode={ claimCode } // pass claim code if isEnterClaimCode is false
         isEnterClaimCode={isEnterClaimCode} // if true user need to enter the claim code
         link={{
-          logoUrl: '', // APP logo
+          logoUrl: 'https://res.cloudinary.com/duwztsuxj/image/upload/v1683870261/Frame_238173_cpwne5.png', // APP logo
           termsUrl: 'https://www.getmojito.com/terms', // terms and conditions url
           doNotHaveWalletURL: '', // do not have wallet button to redirect user 
           viewTokenTrackerURL: '' // token tracker url
