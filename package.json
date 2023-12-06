@@ -1,45 +1,61 @@
 {
-  "name": "claim-demo",
+  "name": "mojito-claimable-module",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "yarn prettier --check ./src",
+    "lint:fix": "yarn prettier --write ./src",
+    "storybook": "start-storybook -p 6006",
+    "prepare": "husky install"
+  },
   "dependencies": {
-    "@apollo/client": "^3.8.7",
-    "@mojito-inc/claim-management": "^1.0.2-beta.10",
+    "@apollo/client": "^3.7.7",
+    "@crossmint/connect": "^0.0.8",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mojito-inc/claim-management": "1.0.2-beta.21",
+    "@mojito-inc/core-service": "1.0.8-beta.13",
+    "@mojito-inc/core-ui": "1.0.0",
+    "@mojito-inc/secondary-market": "1.0.3-beta.52",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.11",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@next/font": "13.1.6",
+    "@popperjs/core": "^2.11.8",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.10",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "graphql": "^16.6.0",
+    "html-react-parser": "^3.0.9",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.34",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5",
+    "ethers": "^5.7.2",
     "@walletconnect/modal": "^2.6.2",
-    "@web3modal/ethers5": "^3.3.2",
-    "graphql": "^16.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "@web3modal/ethers5": "^3.2.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@storybook/react": "^6.5.16",
+    "@testing-library/react": "^13.4.0",
+    "@types/react-test-renderer": "^18.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
+    "prettier": "2.8.4",
+    "react-test-renderer": "^18.2.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "browser": {
+    "fs": false,
+    "net": false,
+    "tls": false,
+    "os": false,
+    "path": false,
+    "encoding": false
   }
 }
