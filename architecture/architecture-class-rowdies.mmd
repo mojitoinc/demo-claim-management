@@ -1,0 +1,55 @@
+classDiagram
+CoreComponent --> Header
+CoreComponent --> FAQ
+CoreComponent --> ClaimLModal
+CoreComponent --> ClaimLoading
+CoreComponent --> ClaimSuccess
+Header --> HeroBlock
+FAQ --> FAQInfo
+ClaimLModal --> CreateWalletContainer
+ClaimLModal --> EnterCodeContainer
+ClaimLModal --> DiscountContainer
+
+class Header{
+    -String logo
+}
+class HeroBlock {
+    -String title
+    -String subTitle
+    -String description
+    -String image
+}
+class FAQ {
+    -array items
+}
+class FAQInfo {
+    -String title
+    -String description
+}
+
+class CreateWalletContainer {
+    -String image
+	-String activeItem
+	-String title
+	-String description
+}
+class EnterCodeContainer {
+    -String image
+	-String title
+	-String description
+}
+class DiscountContainer {
+    -String image
+	-String title
+	-String description
+}
+class ClaimLoading {
+    -String image
+	-String status
+	-String description
+}
+class ClaimSuccess {
+    -String image
+	-String status
+	-String description
+}

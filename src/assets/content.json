@@ -1,0 +1,78 @@
+{
+  "title": "Rowdies Claimable",
+  "description": "Mojito Rowdies Claimable",
+  "logoURL": "https://storage.googleapis.com/mojito-dev-public/organizations/8e680198-c0df-4c4a-9fae-6abd4f292447/assets/rowdies-logo.svg",
+  "color": {
+    "primary": "#FDCC35",
+    "secondary": "#356045",
+    "textColor": "#000",
+    "background": "#000",
+    "headerBackground": "#000"
+  },
+  "hero": {
+    "title": "Rowdies Digital Pass",
+    "subTitle": "Exclusive for Season Ticket Members",
+    "description": "Welcome all Rowdies Season Ticket Members! As a special benefit for the 2023 season, we have created an exclusive Rowdies Digital Pass.This digital pass is only available to our Season Ticket Members and will provide verification to receive a 20% discount on select food & beverage and retail locations at ALL home games this season. Please follow the steps below to claim your digital pass and have your QR code ready to receive your discounts! For more information, please select the FAQ options below.",
+    "imageURL": "https://storage.googleapis.com/mojito-dev-public/organizations/8e680198-c0df-4c4a-9fae-6abd4f292447/images/ART230415_Rowdies_Season_Member_Digital_Pass_NFT_GOLD_2_v3.jpg"
+  },
+  "stadium": {
+    "title": "Digital Pass Accepted Locations",
+    "description": "",
+    "imageURL": "https://storage.googleapis.com/mojito-dev-public/organizations/8e680198-c0df-4c4a-9fae-6abd4f292447/images/stadium.png"
+  },
+  "faq": [
+    {
+      "label": "How do I redeem my Rowdies Digital Pass and unique QR code?",
+      "description": "<ul style='list-style-type: none; margin: 0; padding: 0;'><li>Step 1) Click on ‘Claim Your Member Discount’</li><li>Step 2) Select Rowdies – Crossmint</li><li>Step 3) Enter your claim code (emailed to the Season Member account holder)</li><li>Step 4) Download the TokenProof App</li><li>Step 5) Create an account by selecting the icon in the top right corner. Select ‘Blockchain Wallet’ and ‘Crossmint’. Enter the same email address you used to register, and you are ready to go! When logged in, your Rowdies Digital Pass QR code can be opened and scanned. Screenshots of the QR code will not work.</li></ul>"
+    },
+    {
+      "label": "What is a ‘Rowdies Digital Pass’ and what can I do with it?",
+      "description": "The Rowdies Digital Pass is a unique offering as a benefit to all Rowdies Season Ticket Holders. These passes can be redeemed and scanned through the TokenProof app at all home games to receive exclusive discounts at select retail and concession stands."
+    },
+    {
+      "label": "What is a claim code and why do I need it?",
+      "description": "The claim code is custom to each Season Ticket account holder. Please check your inbox as you will need this to verify your registration."
+    },
+    {
+      "label": "What is Rowdies – Crossmint",
+      "description": "<ul style='list-style-type: none; margin: 0; padding: 0;'><li>Crossmint is a custodial account that will hold your digital pass. This is verified through blockchain technology certifying that the holder has ownership of their digital pass in their account.</li> <br> <li>Create an account by entering your email address and confirming the verification message sent. If you do not see this immediately, make sure to check your spam inbox.</li></ul>"
+    },
+    {
+      "label": "What is TokenProof?",
+      "description": "TokenProof is a free mobile app available on iOS/Android devices in the App store. This will be the app used to show your unique QR code at the game to receive exclusive discounts and benefits. Please note that screenshots will NOT work for the dynamically moving QR code."
+    },
+    {
+      "label": "When logged into TokenProof, why do I see numbers and letters?",
+      "description": "This is your account address and can be customized. When logged in, select your account to pull up the QR code. Select the “i” icon in the top right corner and the “pencil” icon to change the address to a custom name."
+    },
+    {
+      "label": "Can I screenshot my QR code from TokenProof and share with friends or family?",
+      "description": "No, screenshotting of your QR code will not work. This is a dynamically moving code that is constantly working to verify that your Rowdies Digital Pass is in your account."
+    },
+    {
+      "label": "Can I use this as my ticket to get into the game?",
+      "description": "No, the Rowdies Digital Pass is only used to verify that you are a Rowdies Season Member to receive exclusive discounts at select retail and concession locations at Rowdies home games."
+    },
+    {
+      "label": "What locations can I use the Rowdies Digital Pass?",
+      "description": "The Rowdies Digital Pass can only be used at the East & Midfield F&B/retail locations. <br></br> To view all locations where the digital pass can be utilized, please <a target='_blank' style='color: #fff' href='https://storage.googleapis.com/mojito-dev-public/organizations/8e680198-c0df-4c4a-9fae-6abd4f292447/images/stadium.png'>click here</a> </br>"
+    },
+    {
+      "label": "Questions",
+      "description": "With any further questions please contact your membership specialist or email us at <a href='mailto:seasonticketmembers@rowdiessoccer.com' style='color: #fff'>seasonticketmembers@rowdiessoccer.com </a>"
+    }
+  ],
+  "storeURL": {
+    "appStoreURL": "https://apps.apple.com/us/app/tokenproof/id1605810422",
+    "playStoreURL": "https://play.google.com/store/apps/details?id=xyz.tokenproof.wallet&hl=en_US&gl=US&pli=1"
+  },
+  "footer": {
+    "privacyPolicyURL": "/privacy",
+    "termsAndConditionsURL": "/terms",
+    "twitterURL": "https://twitter.com/TampaBayRowdies",
+    "facebookURL": "https://www.facebook.com/TampaBayRowdies/",
+    "instagramURL": "https://www.instagram.com/tampabayrowdies/",
+    "youtubeURL": "https://www.youtube.com/channel/UC4UeLElb1ll0fLFozukNKow?view_as=subscriber"
+  },
+  "contactUs": "seasonticketmembers@rowdiessoccer.com"
+}
