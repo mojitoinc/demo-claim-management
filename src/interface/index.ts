@@ -1,4 +1,3 @@
-import { SubHeaderBlockProps } from "./../layouts/HomeLayout";
 export interface AppColor {
   primary: string;
   secondary: string;
@@ -108,7 +107,7 @@ export interface ContentObject {
     description: string;
     imageURL: string;
   };
-  subHeader: SubHeaderBlockProps;
+  subHeader: any;
   faq: FAQItem[];
   footer: FooterData;
   socialMedia: SocialMediaData;
