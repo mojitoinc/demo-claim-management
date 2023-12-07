@@ -2238,10 +2238,10 @@
     semver "^7.3.8"
     superstruct "^1.0.3"
 
-"@mojito-inc/claim-management@1.0.2-beta.21":
-  version "1.0.2-beta.21"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.21.tgz#130048b8b8d9e7709700a4a4578f488738d0644c"
-  integrity sha512-IcjUGhQ6TiHpY82rQicFdPNBXFIroV5TBil5vRkdIsxhJcm7QrlpSl+Xc0oW+iTlssSQNtR80Nj5+W+F+CnLgA==
+"@mojito-inc/claim-management@1.0.2-beta.22":
+  version "1.0.2-beta.22"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.22.tgz#9061b31b0a52101d49c8b44263d4eac6607bdf72"
+  integrity sha512-QTSiAhVMUZ4hV7MiwQiDtANpAhly/tzyDrd9QfebvlIJFFygFGRg0ffGroDegP8mhg+AUObfAEzrsvLK2wS+pQ==
   dependencies:
     "@apollo/client" "^3.7.15"
     "@crossmint/connect" "^0.0.8"
@@ -2253,7 +2253,7 @@
     "@thirdweb-dev/react" "^4.1.11-nightly-b3394277-20231201132356"
     "@thirdweb-dev/sdk" "^4.0.17"
     "@walletconnect/modal" "^2.6.2"
-    "@web3modal/ethers5" "^3.2.0"
+    "@web3modal/ethers5" "^3.4.0"
     ethers "^5.7.2"
     graphql "^16.6.0"
     html-react-parser "^3.0.9"
@@ -5046,7 +5046,7 @@
     "@walletconnect/utils" "2.10.2"
     events "^3.3.0"
 
-"@walletconnect/ethereum-provider@^2.9.1":
+"@walletconnect/ethereum-provider@2.10.5", "@walletconnect/ethereum-provider@^2.9.1":
   version "2.10.5"
   resolved "https://registry.yarnpkg.com/@walletconnect/ethereum-provider/-/ethereum-provider-2.10.5.tgz#a14ede16a751f115f8a0d050736155c8654835d5"
   integrity sha512-Pihi2M03cRkWEiGetRUiO2A506YTj/Bbbxp+Ct7t5N5SccoeuhrzsEt30pA7I0XAiOnAeKp79OKmXHRhXfRmhg==
@@ -5389,12 +5389,27 @@
   dependencies:
     dayjs "1.11.10"
 
+"@web3modal/common@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/common/-/common-3.4.0.tgz#9c271f7d8455a119afab98d2744485b3d7d42cf0"
+  integrity sha512-zKGuQOPwXbyQ2eRnJl0JgcU3XWFlDdcYxxlb3QrzchoUQjs14VZ9u2Frbyh0KMVofMh3wl7xiyZxgr8alTp5HQ==
+  dependencies:
+    dayjs "1.11.10"
+
 "@web3modal/core@3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@web3modal/core/-/core-3.3.1.tgz#f29c5bcab56c9a887ccfd9a5c2fce03efc0933b5"
   integrity sha512-gz/ye7QQN+XSHHnaXGM/WVIiNhZ6b+3RNYFne2GNs7GcATSg5eGkLkdgVXWlJ2BcsIOkNmvfWXnnp+tVxseQ7w==
   dependencies:
     "@web3modal/common" "3.3.1"
+    valtio "1.11.2"
+
+"@web3modal/core@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/core/-/core-3.4.0.tgz#8778f9ec08d4502d6609a2a8b28478587ec27954"
+  integrity sha512-seFMMMu221j32y5iFmHCGBNwPw2FK6+EG8L3d9GVT4mT55vVM3yWqYsIu4+QsY6RH92sQ5GZh/dxCAVRReUMVg==
+  dependencies:
+    "@web3modal/common" "3.4.0"
     valtio "1.11.2"
 
 "@web3modal/ethers5@^3.2.0":
@@ -5415,10 +5430,35 @@
     react-dom ">=17"
     vue ">=3"
 
+"@web3modal/ethers5@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/ethers5/-/ethers5-3.4.0.tgz#97dbd02a66bd1b6a82dc7cda304b2e0e2a1e5e8d"
+  integrity sha512-7yIme8aYwUOc1X3Jh6qo/uDzJJZr5KIjRXElUGrRxzqVLAkZAfulGK9+s7JTejJ5bYE41jMErXOo4sdk4vNCGw==
+  dependencies:
+    "@coinbase/wallet-sdk" "3.7.2"
+    "@walletconnect/ethereum-provider" "2.10.5"
+    "@web3modal/polyfills" "3.4.0"
+    "@web3modal/scaffold" "3.4.0"
+    "@web3modal/scaffold-react" "3.4.0"
+    "@web3modal/scaffold-utils" "3.4.0"
+    "@web3modal/scaffold-vue" "3.4.0"
+    valtio "1.11.2"
+  optionalDependencies:
+    react ">=17"
+    react-dom ">=17"
+    vue ">=3"
+
 "@web3modal/polyfills@3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@web3modal/polyfills/-/polyfills-3.3.1.tgz#0fd383946f6ac336d7877414c9c9bcf9465222eb"
   integrity sha512-afXixTyGKDe7uL4BCZ9ORnU5lhk4O+0y7MkWE0WUbhbDhghnonjkBs/bx46xTtsASQUFrCyZ2LdxsnkabL1RRg==
+  dependencies:
+    buffer "6.0.3"
+
+"@web3modal/polyfills@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/polyfills/-/polyfills-3.4.0.tgz#f6d070cc4e508401d0cb764972b2d406ce62b637"
+  integrity sha512-LpfYGmfxnrxkUSketKrCikPnqoEaFjD/DXrvggjei5JUg0p9ySWyiF/dQco2RgOan17Pj/5w8IZmJMc8osWXxA==
   dependencies:
     buffer "6.0.3"
 
@@ -5429,12 +5469,34 @@
   dependencies:
     "@web3modal/scaffold" "3.3.1"
 
+"@web3modal/scaffold-react@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/scaffold-react/-/scaffold-react-3.4.0.tgz#a984d2a751e5ed56a2cd143916d79135ec882565"
+  integrity sha512-g3apjAUvvX+43Q6LJx3jwTKql2EWEQI/IIJmIsGzjXXgo0YoVr4a62JBqunPcyUbUzkkEMaz2w1cjLzxPLpG9w==
+  dependencies:
+    "@web3modal/scaffold" "3.4.0"
+
+"@web3modal/scaffold-utils@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/scaffold-utils/-/scaffold-utils-3.4.0.tgz#916efc66eb154bbfc1879889b10cc8f61ea59ea9"
+  integrity sha512-yYs2YGoNjWq/1LppJbuiNZL9bUCKqH2NrtA0cUx+/ICCjpxqfwFhkveQZ1kUZ+HGbzg1jg+o5YxVmAGeZDDxpA==
+  dependencies:
+    "@web3modal/polyfills" "3.4.0"
+    "@web3modal/scaffold" "3.4.0"
+
 "@web3modal/scaffold-vue@3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@web3modal/scaffold-vue/-/scaffold-vue-3.3.1.tgz#7353b25f0965e427900cb9513219cfa3b9f2cd14"
   integrity sha512-LcO5BGc9Rzt5/kyWy+sebB4SkKhGmO4rkiJVdA/chQHBRCUdqok54omqieD7bI17QkbtPxU4lAhHCvBcrSilBg==
   dependencies:
     "@web3modal/scaffold" "3.3.1"
+
+"@web3modal/scaffold-vue@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/scaffold-vue/-/scaffold-vue-3.4.0.tgz#58414512c5e91bebe504fccd44b70d983b78c9d8"
+  integrity sha512-QJVxUnxgx6DAF+psLia73azmBHeeeXJljL/VeSvzrHvigSfgnxyqdlytPJbsHrtjRDcAewgCoX0UrLjWf1ksTw==
+  dependencies:
+    "@web3modal/scaffold" "3.4.0"
 
 "@web3modal/scaffold@3.3.1":
   version "3.3.1"
@@ -5445,10 +5507,27 @@
     "@web3modal/ui" "3.3.1"
     lit "3.0.0"
 
+"@web3modal/scaffold@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/scaffold/-/scaffold-3.4.0.tgz#cbc4ce530cc74822a47ee0d7ab2dbe5ba458615a"
+  integrity sha512-ur09LnCGK+H3B+btGuuS0oqvaK/TV1fNmQA8FYEuO1CT6Lvr3JfODauJkGixYkYe8XfwfiNFur5SZo3h3fj00w==
+  dependencies:
+    "@web3modal/core" "3.4.0"
+    "@web3modal/ui" "3.4.0"
+    lit "3.0.0"
+
 "@web3modal/ui@3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@web3modal/ui/-/ui-3.3.1.tgz#f95108c60f2fbbc2080052facf7c394389fd936b"
   integrity sha512-xHsOkXGMm52h5NBdIR4kOMD3LI+GZG5JkbcTKPTxOCHLbQ6c4dBuWtt7tJgay0+nreM9/DWq2H3AjWpJvAtueQ==
+  dependencies:
+    lit "3.0.0"
+    qrcode "1.5.3"
+
+"@web3modal/ui@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@web3modal/ui/-/ui-3.4.0.tgz#0bcae9c556d72547c9296832659c713084706278"
+  integrity sha512-mQaas/d9aQAF972OeQkO5pPWyp7e9YSbuPpMj5eYsdBqsOutJjnqsC4i8Fpzp4S0rfvFzq9ZjkDa5nFksCFNpQ==
   dependencies:
     lit "3.0.0"
     qrcode "1.5.3"

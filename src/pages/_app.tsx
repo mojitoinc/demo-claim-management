@@ -12,6 +12,8 @@ import { WalletContext } from "../provider/WalletContext";
 import "../theme/fonts.css";
 import { StorageService } from "@/services";
 import AuthenticationProvider from "@/provider/AuthenticationProvider";
+import { AuthDetailsProvider } from "@/provider/AuthProvider";
+import ClaimProvider from "@/provider/ClaimProvider";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [content, setContent] = useState<ContentObject>({} as ContentObject);
@@ -96,34 +98,27 @@ export default function App({ Component, pageProps }: AppProps) {
           })(window,document,'script','dataLayer','${RuntimeConfiguration.GOOGLE_TAG_MANAGER_ID}');`,
         }}
       />
-      <ContentContext.Provider value={{ content, setContent }}>
-        <WalletContext.Provider value={{ wallet, setWallet }}>
-          <Head>
-            <title>{content.title}</title>
-            <meta name="description" content={content.description} />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <link rel="icon" href="../../public/favicon.ico" />
-          </Head>
-          <AuthenticationProvider>
-            <ClaimManagementProvider
-              theme={theme}
-              clientOptions={clientOptions}
-              activeChain={ activeChain }
-              clientId={ RuntimeConfiguration.CLIENT_ID }
-              walletConnectProjectId={
-                RuntimeConfiguration.WALLET_CONNECT_PROJECT_ID
-              }
-              onAuthenticated={setToken}
-            >
-              <GlobalStyles styles={styles} />
-              <Component {...pageProps} />
-            </ClaimManagementProvider>
-          </AuthenticationProvider>
-        </WalletContext.Provider>
-      </ContentContext.Provider>
+      <AuthDetailsProvider>
+        <ContentContext.Provider value={{ content, setContent }}>
+          <WalletContext.Provider value={{ wallet, setWallet }}>
+            <Head>
+              <title>{content.title}</title>
+              <meta name="description" content={content.description} />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+              <link rel="icon" href="../../public/favicon.ico" />
+            </Head>
+            <AuthenticationProvider>
+              <ClaimProvider>
+                <GlobalStyles styles={styles} />
+                <Component {...pageProps} />
+              </ClaimProvider>
+            </AuthenticationProvider>
+          </WalletContext.Provider>
+        </ContentContext.Provider>
+      </AuthDetailsProvider>
     </>
   );
 }

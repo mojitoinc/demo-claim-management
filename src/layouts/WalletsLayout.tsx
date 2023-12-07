@@ -16,8 +16,6 @@ import router from "next/router";
 import { Images } from "@/assets/images";
 import { SecondaryMarketTheme as themes } from "../theme";
 import Box from "@mui/material/Box";
-import { RuntimeConfiguration } from "@/configuration";
-import { ClaimTokenModal, useWallet } from "@mojito-inc/claim-management";
 import Footer from "@/Component/Footer";
 
 export enum ListingType {
@@ -30,11 +28,7 @@ const WalletsLayout = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { wallet, setWallet } = useContext(WalletContext);
   const { content } = useContext(ContentContext);
-  const [showClaimModal, setShowClaimModal] = useState<boolean>(false);
-  const [showConnectModal, setShowConnectModal] = useState<boolean>(false);
   const [disconnect, setDisconnect] = useState<boolean>(false);
-  const { address, balance, networkDetails, provider, providerType } =
-    useWallet();
 
   const config = useMemo(() => {
     return {
@@ -72,8 +66,6 @@ const WalletsLayout = () => {
       ...wallet,
       isDisconnect: false,
     });
-    setShowClaimModal(true);
-    setShowConnectModal(true);
   }, [setWallet, wallet]);
 
   useEffect(() => {
@@ -87,21 +79,9 @@ const WalletsLayout = () => {
     setDisconnect(true);
   }, []);
 
-  const onCloseModal = useCallback(() => {
-    setShowClaimModal(false);
-  }, []);
-
-  const handleSuccessRedirection = useCallback(() => {
-    onCloseModal();
-    router.push("/membership");
-  }, [onCloseModal]);
-
   const currency = useMemo(() => {
-    if (networkDetails?.chainID === 80001 || networkDetails?.chainID === 137) {
-      return { currencyName: "MATIC", currencyIcon: Images.MATIC.default.src };
-    }
     return { currencyName: "ETH", currencyIcon: Images.ETHICON.default.src };
-  }, [networkDetails?.chainID]);
+  }, []);
 
   return (
     <div
@@ -116,8 +96,8 @@ const WalletsLayout = () => {
         headerText="Wallet"
         logo={content.logoURL}
         menuLabel={content?.menuLabel}
-        walletAddress={address}
-        balance={balance?.native}
+        walletAddress=""
+        balance={0}
         currencyName={currency?.currencyName}
         currencyIcon={currency?.currencyIcon}
         buttonName={content.buttonName}
@@ -135,11 +115,19 @@ const WalletsLayout = () => {
               showMenu={false}
               listingType={ListingType?.CLAIMABLE}
               walletDetails={{
-                balance: balance,
-                walletAddress: address,
-                providerType: providerType,
-                networkDetails: networkDetails,
-                provider: provider,
+                balance: {
+                  native: 0,
+                  nonNative: 0,
+                },
+                walletAddress: '',
+                providerType: '',
+                networkDetails: {
+                  chainID: 0,
+                  id: '',
+                  isTestnet: false,
+                  name: '',
+                },
+                provider: null,
                 disConnect: false,
                 open: false,
                 refetchBalance: false,
@@ -166,34 +154,6 @@ const WalletsLayout = () => {
           linkedInURL={content?.footer?.linkedInURL}
         />
       )}
-      <ClaimTokenModal
-        open={showClaimModal}
-        onCloseModal={onCloseModal}
-        skipClaimModal={showConnectModal}
-        config={{
-          crossmintApiKey: RuntimeConfiguration.CROSSMINT_API ?? "",
-          crossmintEnv: RuntimeConfiguration?.CROSSMINT_ENV ?? "",
-          orgId: RuntimeConfiguration.ORG_ID ?? "",
-          chainId: Number(RuntimeConfiguration.CHAIN_ID) ?? 4,
-          paperClientId: RuntimeConfiguration.PAPER_CLIENT_ID ?? "",
-          paperNetworkName: RuntimeConfiguration.NETWORK_NAME ?? "",
-        }}
-        isTokenGating
-        tokenGatingConfig={{
-          groupId: RuntimeConfiguration?.TOKEN_GATING_GROUP_ID,
-          ruleId: RuntimeConfiguration?.TOKEN_GATING_RULE_ID,
-        }}
-        isDisConnect={disconnect}
-        walletOptions={content.walletOptions}
-        claimCode={content.claimCode}
-        isEnterClaimCode={content.isEnterClaimCode}
-        link={{
-          termsUrl: content.footer.termsAndConditionsURL,
-          logoUrl: content.logoURL,
-        }}
-        content={content.popupContent}
-        onSuccess={handleSuccessRedirection}
-      />
     </div>
   );
 };
