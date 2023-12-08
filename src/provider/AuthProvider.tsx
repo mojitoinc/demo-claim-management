@@ -26,7 +26,7 @@ export const AuthDetailsProvider = ({
   children,
 }: AuthDetailsProviderProps) => {
   const [authDetails, setAuthDetails] = useState<ConnectType>({
-    apiDomain: 'https://api-stg.mojito.xyz/query',
+    apiDomain: 'https://api-sandbox.mojito.xyz/query',
     orgId: '960ce62a-412d-43ee-b60d-da21ee1ea217',
   });
 

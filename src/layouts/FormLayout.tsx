@@ -140,10 +140,10 @@ const FormLayout = () => {
                 label="Choose API domain"
                 onChange={ onChangeAPIDomain }
               >
-                <MenuItem value="https://api-dev.mojito.xyz/">Development</MenuItem>
-                <MenuItem value="https://api-stg.mojito.xyz/">Staging</MenuItem>
-                <MenuItem value="https://api-sandbox.mojito.xyz/">Sandbox</MenuItem>
-                <MenuItem value="https://api.mojito.xyz/">Production</MenuItem>
+                <MenuItem value="https://api-dev.mojito.xyz/query">Development</MenuItem>
+                <MenuItem value="https://api-stg.mojito.xyz/query">Staging</MenuItem>
+                <MenuItem value="https://api-sandbox.mojito.xyz/query">Sandbox</MenuItem>
+                <MenuItem value="https://api.mojito.xyz/query">Production</MenuItem>
               </Select>
             </FormControl>
         </Stack>
