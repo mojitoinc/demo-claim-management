@@ -31,6 +31,8 @@ const FormLayout = () => {
   const [claimCode, setClaimCode] = useState('');
   const [isTokenGating, setIsTokenGating] = useState(false);
   const [isEnterCode, setIsEnterCode] = useState(false);
+  const [isNegativeTokenGating, setIsNegativeTokenGating] = useState(false);
+  const [isClaimWithGas, setIsClaimWithGas] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [disconnect, setDisconnect] = useState(false);
   const [showBuyButton, setShowBuyButton] = useState(false);
@@ -91,6 +93,14 @@ const FormLayout = () => {
 
   const onChangeIsEnterCode = (e: ChangeEvent<HTMLInputElement>) => {
     setIsEnterCode(e.target.checked);
+  }
+
+  const onChangeIsNegativeTokenGating = (e: ChangeEvent<HTMLInputElement>) => {
+    setIsNegativeTokenGating(e.target.checked);
+  }
+
+  const onChangeIsClaimWithGas = (e: ChangeEvent<HTMLInputElement>) => {
+    setIsClaimWithGas(e.target.checked);
   }
 
   const onChangeShowBuyButton = (e: ChangeEvent<HTMLInputElement>) => {
@@ -156,6 +166,8 @@ const FormLayout = () => {
             <FormGroup sx={{ display: { sm: 'block', lg: 'flex' }, gap: '20px' }}>
                 <FormControlLabel control={<Switch checked={ isTokenGating } onChange={ onChangeIsTokenGating } />} label="Enable token gating" />
                 <FormControlLabel control={<Switch checked={ isEnterCode } onChange={ onChangeIsEnterCode } />} label="Enable enter claim code" />
+                <FormControlLabel control={<Switch checked={ isNegativeTokenGating } onChange={ onChangeIsNegativeTokenGating } />} label="Enable negative token gating" />
+                <FormControlLabel control={<Switch checked={ isClaimWithGas } onChange={ onChangeIsClaimWithGas } />} label="Enable claim with gas" />
                 { isTokenGating && <FormControlLabel control={<Switch checked={ showBuyButton } onChange={ onChangeShowBuyButton } />} label="Show buy now button" /> }
             </FormGroup>
         </Stack>
@@ -176,6 +188,8 @@ const FormLayout = () => {
             onCloseModal={ handleCloseModal }
             name={ name }
             userEmail={ email }
+            isClaimWithGas={ isClaimWithGas }
+            saleType={ isTokenGating ? "TokenGating" : isEnterCode ? "CustomCode" : isNegativeTokenGating ? "NegativeTokenGating" : "NoCode" }
             config={{
                 crossmintApiKey: RuntimeConfiguration.CROSSMINT_API ?? "",
                 crossmintEnv: RuntimeConfiguration?.CROSSMINT_ENV ?? "",
@@ -193,14 +207,12 @@ const FormLayout = () => {
             }}
             claimItemId={ listingId }
             claimCode={ claimCode }
-            isEnterClaimCode={ isEnterCode }
             link={{
                 termsUrl: 'https://www.getmojito.com/terms',
                 logoUrl: 'https://res.cloudinary.com/duwztsuxj/image/upload/v1683870261/Frame_238173_cpwne5.png',
                 privacyUrl: 'https://www.getmojito.com/terms',
                 additionalTermsUrl: 'https://www.getmojito.com/terms',
             }}
-            isTokenGating={ isTokenGating }
             tokenGatingConfig={{
                 groupId: groupId,
                 ruleId: ruleId,

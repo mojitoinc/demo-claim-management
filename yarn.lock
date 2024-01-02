@@ -2238,14 +2238,14 @@
     semver "^7.3.8"
     superstruct "^1.0.3"
 
-"@mojito-inc/claim-management@1.0.2-beta.22":
-  version "1.0.2-beta.22"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.22.tgz#9061b31b0a52101d49c8b44263d4eac6607bdf72"
-  integrity sha512-QTSiAhVMUZ4hV7MiwQiDtANpAhly/tzyDrd9QfebvlIJFFygFGRg0ffGroDegP8mhg+AUObfAEzrsvLK2wS+pQ==
+"@mojito-inc/claim-management@1.0.2-beta.28":
+  version "1.0.2-beta.28"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.28.tgz#4daed28432733bde6de909efae458e37daba4dbf"
+  integrity sha512-+ze71+cXuHygz7JkFTaFv/Fd+nLIekRtQvvpKNPhNZMIgHarCOyiso8eXJSDAb71qBtmW9NIaTK8tA1oBmbM3g==
   dependencies:
     "@apollo/client" "^3.7.15"
     "@crossmint/connect" "^0.0.8"
-    "@mojito-inc/core-service" "^1.0.8-beta.14"
+    "@mojito-inc/core-service" "^1.0.8-beta.18"
     "@mojito-inc/core-ui" "1.0.0"
     "@mui/icons-material" "^5.11.11"
     "@mui/material" "^5.11.11"
@@ -2264,15 +2264,10 @@
   resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.12.tgz#2e4b93619be6d2874ff7cba8d6de89580b7d7c3a"
   integrity sha512-efBtMtiitCy6bQLVeMPLvRL64t88NGfTUtiaBAvJDekYmEip0SWS3DTp2ZE5n4javrlJoLKoq8D54eS2FPl6XQ==
 
-"@mojito-inc/core-service@1.0.8-beta.13":
-  version "1.0.8-beta.13"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.13.tgz#ebeb020c8625dd70a56789f3195d59ca523f491e"
-  integrity sha512-Mi//OhxFN922CIMpTj95gq0+q8Ik9moniFn56sB2qNQD46Rt8ifSQjElKKy6H90XTJzTmB32n/VFX4yTSOCb9w==
-
-"@mojito-inc/core-service@^1.0.8-beta.14":
-  version "1.0.8-beta.14"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.14.tgz#5ce90b4d96c2ad97a404c2baa94ec0718fc072bc"
-  integrity sha512-CWOXXwbw+6hITEjuPuU7WW8GLGveEgAUdWC3vRCMfjog14JNonFTWPrbhI6GaNWIBAXTsu4vNqGMXmFsy/Hp4w==
+"@mojito-inc/core-service@1.0.8-beta.18", "@mojito-inc/core-service@^1.0.8-beta.18":
+  version "1.0.8-beta.18"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.18.tgz#f6343dcafe32440210fe2bd0a71fcd08d7beee53"
+  integrity sha512-K3bLgFoA7uPi+yZuRJfRGCY3pcxwkBwpgmCpXSCXWWKt2e3fsabWWExxThIzCuesxyr8+CP41oxuqj32XYSlZQ==
 
 "@mojito-inc/core-ui@1.0.0":
   version "1.0.0"
