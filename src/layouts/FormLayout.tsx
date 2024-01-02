@@ -168,17 +168,17 @@ const FormLayout = () => {
                 <FormControlLabel control={<Switch checked={ isEnterCode } onChange={ onChangeIsEnterCode } />} label="Enable enter claim code" />
                 <FormControlLabel control={<Switch checked={ isNegativeTokenGating } onChange={ onChangeIsNegativeTokenGating } />} label="Enable negative token gating" />
                 <FormControlLabel control={<Switch checked={ isClaimWithGas } onChange={ onChangeIsClaimWithGas } />} label="Enable claim with gas" />
-                { isTokenGating && <FormControlLabel control={<Switch checked={ showBuyButton } onChange={ onChangeShowBuyButton } />} label="Show buy now button" /> }
+                { (isTokenGating || isNegativeTokenGating) && <FormControlLabel control={<Switch checked={ showBuyButton } onChange={ onChangeShowBuyButton } />} label="Show buy now button" /> }
             </FormGroup>
         </Stack>
-        { isTokenGating && (
+        { (isTokenGating || isNegativeTokenGating) && (
             <Stack sx={{ marginBottom: '20px' }} gap="20px" direction={{ sm: 'column', lg: 'row' }}>
                 <TextField value={ ruleId } onChange={ onChangeRuleId } placeholder="Enter rule id" />
                 <TextField value={ groupId } onChange={ onChangeGroupId } placeholder="Enter group id" />
             </Stack>
         ) }
         <Stack sx={{ marginBottom: '20px' }} gap="20px" direction="column">
-            {!isEnterCode && !isTokenGating && <TextField sx={{ marginBottom: '20px' }} value={ claimCode } onChange={ onChangeClaimCode } placeholder="Enter claim code" /> }
+            {!isEnterCode && !(isTokenGating || isNegativeTokenGating) && <TextField sx={{ marginBottom: '20px' }} value={ claimCode } onChange={ onChangeClaimCode } placeholder="Enter claim code" /> }
             <Button onClick={ handleOpenModal }>Open modal</Button>
             { address && <Button onClick={ handleDisconnect }>Disconnect</Button> }
         </Stack>
