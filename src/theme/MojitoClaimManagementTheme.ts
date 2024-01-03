@@ -41,4 +41,9 @@ export interface MojitoClaimManagementTheme {
   deliveryBackgroundColor?: string;
   linkColor?: string;
   success: string;
+  font: {
+    primary: string;
+    secondary: string;
+    tertiary: string;
+  };
 }

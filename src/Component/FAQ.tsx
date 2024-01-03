@@ -4,12 +4,12 @@ import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { useTheme } from "@mui/material/styles";
-import { Accordion } from "@mojito-inc/core-ui";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import parse from "html-react-parser";
 import Button from "@mui/material/Button";
 import { ButtonNameProps } from "@/interface";
+import Accordion from "./Accordion";
 
 export interface FAQItem {
   label: string;
@@ -37,7 +37,7 @@ const SeeMoreComponent = ({
     <Typography
       onClick={onClickExpand}
       sx={{
-        fontFamily: theme?.MojitoCoreUI?.font?.secondary,
+        fontFamily: theme?.MojitoClaim?.font?.secondary,
         fontWeight: 700,
         fontSize: "14px",
         display: "flex",
@@ -78,7 +78,7 @@ const FAQ = ({ buttonName, isMobile, data, onClickClaim }: FAQProps) => {
         backgroundColor: theme?.palette?.background?.paper,
         color: theme?.palette?.text?.primary,
         fontWeight: 700,
-        fontFamily: theme?.MojitoCoreUI?.font?.secondary,
+        fontFamily: theme?.MojitoClaim?.font?.secondary,
         padding: { lg: "40px 240px", md: "40px 240px", xs: "0px" },
       }}
     >
@@ -89,7 +89,7 @@ const FAQ = ({ buttonName, isMobile, data, onClickClaim }: FAQProps) => {
             fontSize: "48px",
             paddingBottom: "48px",
             fontWeight: 700,
-            fontFamily: theme?.MojitoCoreUI?.font?.secondary,
+            fontFamily: theme?.MojitoClaim?.font?.secondary,
           }}
         >
           FAQs
@@ -100,7 +100,7 @@ const FAQ = ({ buttonName, isMobile, data, onClickClaim }: FAQProps) => {
               <Accordion
                 label={ele?.label}
                 labelStyle={{
-                  fontFamily: theme?.MojitoCoreUI?.font?.secondary,
+                  fontFamily: theme?.MojitoClaim?.font?.secondary,
                   fontSize: "24px",
                   paddingBottom: "8px",
                   fontWeight: 700,

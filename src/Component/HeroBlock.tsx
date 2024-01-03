@@ -144,7 +144,7 @@ const HeroBlock = ({
               <Typography sx={{ fontWeight: 700 }}>{subTitle}</Typography>
               <Typography
                 sx={{
-                  fontFamily: theme?.MojitoCoreUI?.font?.tertiary,
+                  fontFamily: theme?.MojitoClaim?.font?.tertiary,
                   fontSize: isMobile ? "32px" : "48px",
                   lineHeight: isMobile ? "38px" : "100%",
                   fontWeight: 700,
@@ -275,7 +275,7 @@ const HeroBlock = ({
                     }
                   >
                     {isClaimAvailable
-                      ? buttonName?.primary || 'Claim My Pass Now'
+                      ? buttonName?.primary || "Claim My Pass Now"
                       : !isSaleStarted
                       ? buttonName?.teritary
                       : buttonName?.secondary || "All Available Collected"}

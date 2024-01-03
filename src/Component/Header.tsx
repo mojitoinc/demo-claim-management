@@ -92,7 +92,7 @@ const Header = ({
   const linkStyle = useMemo(
     () => ({
       textDecoration: "none",
-      fontFamily: theme?.MojitoCoreUI?.font?.primary,
+      fontFamily: theme?.MojitoClaim?.font?.primary,
       color: theme?.palette?.text?.primary,
       fontSize: "12px",
       fontWeight: 700,
@@ -326,7 +326,7 @@ const Header = ({
                   <Button
                     sx={{
                       fontSize: { xs: "14px", lg: "16px" },
-                      background: theme.MojitoCoreUI?.font?.secondary,
+                      background: theme?.MojitoClaim?.font?.secondary,
                       color: theme.palette?.background?.paper,
                       height: "40px",
                     }}

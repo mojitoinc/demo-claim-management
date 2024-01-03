@@ -42,8 +42,8 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 
   const activeChain: any = useMemo(() => {
-    return RuntimeConfiguration.ACTIVE_CHAIN_ID ?? 'sepolia';
-  }, [])
+    return RuntimeConfiguration.ACTIVE_CHAIN_ID ?? "sepolia";
+  }, []);
 
   useEffect(() => {
     if (clientOptions.token) {

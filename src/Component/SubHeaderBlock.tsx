@@ -40,7 +40,7 @@ const SubHeaderBlock = ({
       <Container maxWidth="lg">
         <Typography
           sx={{
-            fontFamily: theme?.MojitoCoreUI?.font?.secondary,
+            fontFamily: theme?.MojitoClaim?.font?.secondary,
             fontSize: "60px",
             lineHeight: "100%",
             fontWeight: 700,

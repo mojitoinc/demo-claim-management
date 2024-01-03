@@ -150,8 +150,6 @@ export const makeTheme = (theme?: themeProps) => {
       deliveryBackgroundColor: theme?.color?.deliveryBackgroundColor,
       linkColor: theme?.color?.linkColor,
       success: "#3E8045",
-    },
-    MojitoCoreUI: {
       font: {
         primary: theme.fontFamily.primary,
         secondary: theme.fontFamily.secondary,

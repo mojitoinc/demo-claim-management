@@ -38,7 +38,7 @@ const Footer = ({
   const linkStyle = useMemo(
     () => ({
       textDecoration: "none",
-      fontFamily: theme?.MojitoCoreUI?.font?.secondary,
+      fontFamily: theme?.MojitoClaim?.font?.secondary,
       color: theme?.palette?.text?.primary,
     }),
     [theme]

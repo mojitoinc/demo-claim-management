@@ -36,7 +36,7 @@ const ButtonStack = ({
       >
         {isClaimAvailable
           ? buttonName?.primary || "Claim My Pass Now"
-          : !isSaleStarted 
+          : !isSaleStarted
           ? buttonName?.teritary
           : buttonName?.secondary || "All Available Collected"}
       </Button>
