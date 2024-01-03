@@ -16,7 +16,7 @@
     "@crossmint/connect": "^0.0.8",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mojito-inc/claim-management": "1.0.2-beta.28",
+    "@mojito-inc/claim-management": "1.0.2-beta.29",
     "@mojito-inc/core-service": "1.0.8-beta.18",
     "@mojito-inc/core-ui": "1.0.0",
     "@mojito-inc/secondary-market": "1.0.3-beta.52",

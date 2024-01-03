@@ -25,6 +25,8 @@ const FormLayout = () => {
   const [claimDetails, setClaimDetails] = useState<ClaimDetails>();
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [loginWithPersonalInformation, setLoginWithPersonalInformation] = useState(false);
   const [listingId, setListingId] = useState('');
   const [ruleId, setRuleId] = useState('');
   const [groupId, setGroupId] = useState('');
@@ -71,8 +73,16 @@ const FormLayout = () => {
     setEmail(e.target.value);
   }
 
+  const onChangeLastName = (e: ChangeEvent<HTMLInputElement>) => {
+    setLastName(e.target.value);
+  }
+
   const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
+  }
+
+  const onChangeLoginWithPII = (e: ChangeEvent<HTMLInputElement>) => {
+    setLoginWithPersonalInformation(e.target.checked);
   }
 
   const onChangeListingId = (e: ChangeEvent<HTMLInputElement>) => {
@@ -159,7 +169,8 @@ const FormLayout = () => {
         </Stack>
         <Stack sx={{ marginBottom: '20px' }} gap="20px" direction={{ sm: 'column', lg: 'row' }}>
             <TextField value={ email } onChange={ onChangeEmail } placeholder="Enter email" />
-            <TextField value={ name } onChange={ onChangeName } placeholder="Enter name" />
+            <TextField value={ name } onChange={ onChangeName } placeholder="Enter First Name" />
+            <TextField value={ lastName } onChange={ onChangeLastName } placeholder="Enter Last Name" />
             <TextField value={ listingId } onChange={ onChangeListingId } placeholder="Enter listing id" />
         </Stack>
         <Stack sx={{ marginBottom: '20px' }}>
@@ -168,6 +179,7 @@ const FormLayout = () => {
                 <FormControlLabel control={<Switch checked={ isEnterCode } onChange={ onChangeIsEnterCode } />} label="Enable enter claim code" />
                 <FormControlLabel control={<Switch checked={ isNegativeTokenGating } onChange={ onChangeIsNegativeTokenGating } />} label="Enable negative token gating" />
                 <FormControlLabel control={<Switch checked={ isClaimWithGas } onChange={ onChangeIsClaimWithGas } />} label="Enable claim with gas" />
+                <FormControlLabel control={<Switch checked={ loginWithPersonalInformation } onChange={ onChangeLoginWithPII } />} label="Personal Information Required" />
                 { (isTokenGating || isNegativeTokenGating) && <FormControlLabel control={<Switch checked={ showBuyButton } onChange={ onChangeShowBuyButton } />} label="Show buy now button" /> }
             </FormGroup>
         </Stack>
@@ -186,7 +198,9 @@ const FormLayout = () => {
             open={ openModal }
             skipClaimModal={ false }
             onCloseModal={ handleCloseModal }
-            name={ name }
+            firstName={ name }
+            lastName={ lastName }
+            loginWithPersonalInformation={loginWithPersonalInformation}
             userEmail={ email }
             isClaimWithGas={ isClaimWithGas }
             saleType={ isTokenGating ? "TokenGating" : isEnterCode ? "CustomCode" : isNegativeTokenGating ? "NegativeTokenGating" : "NoCode" }
