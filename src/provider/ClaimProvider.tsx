@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect, useContext } from "react";
 import { ClaimManagementProvider } from "@mojito-inc/claim-management";
 import { RuntimeConfiguration } from "@/configuration";
-import { ContentObject } from "@/interface";
 import { StorageService } from "@/services";
 import { makeTheme } from "@/theme";
 import Context from "./index";

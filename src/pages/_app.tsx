@@ -6,7 +6,6 @@ import { ContentObject, WalletData } from "@/interface";
 import { GlobalStyles, GlobalStylesProps } from "@mui/material";
 import Head from "next/head";
 import Script from "next/script";
-import { ClaimManagementProvider } from "@mojito-inc/claim-management";
 import ContentContext from "../provider";
 import { WalletContext } from "../provider/WalletContext";
 import "../theme/fonts.css";

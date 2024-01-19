@@ -8,7 +8,6 @@ import Switch from "@mui/material/Switch";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Typography from "@mui/material/Typography";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { ClaimTokenModal, useWallet } from "@mojito-inc/claim-management";
 import { RuntimeConfiguration } from "@/configuration";
@@ -315,7 +314,7 @@ const FormLayout = () => {
         loginWithPersonalInformation={loginWithPersonalInformation}
         userEmail={email}
         isClaimWithGas={isClaimWithGas}
-        saleType={
+        claimType={
           isTokenGating
             ? "TokenGating"
             : isEnterCode
@@ -339,7 +338,7 @@ const FormLayout = () => {
           enablePaper: true,
           enableWalletConnect: true,
         }}
-        claimItemId={listingId}
+        listingId={listingId}
         claimCode={claimCode}
         link={{
           termsUrl: "https://www.getmojito.com/terms",

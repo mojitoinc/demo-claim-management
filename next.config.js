@@ -8,7 +8,7 @@ const nextConfig = {
     deviceSizes: [375, 480, 576, 768, 992, 1200],
   },
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
 };
 
 module.exports = nextConfig;

@@ -2238,10 +2238,10 @@
     semver "^7.3.8"
     superstruct "^1.0.3"
 
-"@mojito-inc/claim-management@1.0.2-beta.29":
-  version "1.0.2-beta.29"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.29.tgz#b14b42e7e0ec89143d55d81ac057ef7153d7f9c1"
-  integrity sha512-nr32vUpcNsleXff/CmSFbCFSe/beAAfneKLG9hdi1D1q0S0zu6xEHwB2PDRXxklZ5MDdEcLOIyhLTbF6OpsExA==
+"@mojito-inc/claim-management@1.0.2-beta.40":
+  version "1.0.2-beta.40"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.40.tgz#c623230951163fa0bbb4b5d39b81508d105ba0e0"
+  integrity sha512-Zpku6wI+qsohX7y3c12j1AROCyVLv2Ig0l/my2gfUdv0FmWc+RSoYbWJu5/4YMd6F1ev+SS84LVn1O1Lks/btw==
   dependencies:
     "@apollo/client" "^3.7.15"
     "@crossmint/connect" "^0.0.8"
@@ -2268,10 +2268,10 @@
   resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.18.tgz#f6343dcafe32440210fe2bd0a71fcd08d7beee53"
   integrity sha512-K3bLgFoA7uPi+yZuRJfRGCY3pcxwkBwpgmCpXSCXWWKt2e3fsabWWExxThIzCuesxyr8+CP41oxuqj32XYSlZQ==
 
-"@mojito-inc/secondary-market@1.0.3-beta.52":
-  version "1.0.3-beta.52"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/secondary-market/-/secondary-market-1.0.3-beta.52.tgz#715184e8a2e013daddd006d3fc08230ea567ebb6"
-  integrity sha512-gCbTeeB5Dm0ErmKMhi2RV5F/F09FEceBCt6FIoHk5NxH6FvrGzuH+AyJkMvhusuF6KfDt94X4O3KtSaPKzW4tg==
+"@mojito-inc/secondary-market@1.0.3-beta.56":
+  version "1.0.3-beta.56"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/secondary-market/-/secondary-market-1.0.3-beta.56.tgz#8ab75da7d21694c8ee3ac713dd3938b076cbd2a5"
+  integrity sha512-4m2mpuU748iiJUm1YNkNeEtihS/uwZaOlbkL1k6vzMSssRQ7RSx6aayFPfwGeXcqtdrsPdIKl33j5HsbE1LAGQ==
   dependencies:
     "@apollo/client" "^3.7.15"
     "@emotion/react" "^11.10.6"
