@@ -1,54 +1,10 @@
 @font-face {
-  font-family: "Roboto Slab";
-  src: url("../assets/fonts/RobotoSlab-Regular.ttf") format("opentype");
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../assets/fonts/Roboto-Regular.ttf") format("opentype");
-}
-@font-face {
-  font-family: "Slate";
-  src: url("../assets/fonts/SlateRg.TTF") format("opentype");
-}
-@font-face {
   font-family: "Sneak";
   src: url("../assets/fonts/Sneak-Regular.otf") format("opentype");
 }
 @font-face {
-  font-family: "Sneak Medium";
-  src: url("../assets/fonts/Sneak-Medium.otf") format("opentype");
-}
-@font-face {
-  font-family: "Sneak Bold";
-  src: url("../assets/fonts/Sneak-Bold.otf") format("opentype");
-}
-@font-face {
   font-family: "Sneak Black";
   src: url("../assets/fonts/Sneak-Black.otf") format("opentype");
-}
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("../assets/fonts/Suisse\ Int_l.ttf") format("opentype");
-}
-@font-face {
-  font-family: "Suisse Intl Regular";
-  src: url("../assets/fonts/SuisseIntl-Regular.ttf") format("opentype");
-}
-@font-face {
-  font-family: "Suisse Intl Bold";
-  src: url("../assets/fonts/SuisseIntl-Bold.ttf") format("opentype");
-}
-@font-face {
-  font-family: "BwModelica Regular";
-  src: url("../assets/fonts/BwModelica-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "BwModelica Bold";
-  src: url("../assets/fonts/BwModelica-Bold.ttf") format("opentype");
-}
-@font-face {
-  font-family: "BwModelica";
-  src: url("../assets/fonts/BwModelica-Medium.otf") format("opentype");
 }
 
 .disabled-link {

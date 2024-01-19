@@ -1,21 +1,16 @@
-import React, { useMemo, useState, useEffect, useContext } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { ClaimManagementProvider } from "@mojito-inc/claim-management";
 import { RuntimeConfiguration } from "@/configuration";
 import { StorageService } from "@/services";
-import { makeTheme } from "@/theme";
-import Context from "./index";
+import { theme } from "@/theme";
 import { useAuthDetails } from "./AuthProvider";
 
 interface ClaimProviderProps {
-  children: JSX.Element[];
+  children: JSX.Element;
 }
 
 const ClaimProvider = ({ children }: ClaimProviderProps) => {
-  const { content } = useContext(Context);
   const { authDetails } = useAuthDetails();
-  const theme: any = useMemo(() => {
-    if (content?.theme) return makeTheme(content?.theme);
-  }, [content]);
 
   const [token, setToken] = useState<string>(
     StorageService.token.getValue() ?? ""

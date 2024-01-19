@@ -2174,7 +2174,7 @@
   resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.12.tgz#2e4b93619be6d2874ff7cba8d6de89580b7d7c3a"
   integrity sha512-efBtMtiitCy6bQLVeMPLvRL64t88NGfTUtiaBAvJDekYmEip0SWS3DTp2ZE5n4javrlJoLKoq8D54eS2FPl6XQ==
 
-"@mojito-inc/core-service@1.0.8-beta.18", "@mojito-inc/core-service@^1.0.8-beta.18":
+"@mojito-inc/core-service@^1.0.8-beta.18":
   version "1.0.8-beta.18"
   resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.18.tgz#f6343dcafe32440210fe2bd0a71fcd08d7beee53"
   integrity sha512-K3bLgFoA7uPi+yZuRJfRGCY3pcxwkBwpgmCpXSCXWWKt2e3fsabWWExxThIzCuesxyr8+CP41oxuqj32XYSlZQ==
@@ -2384,11 +2384,6 @@
   integrity sha512-bPigeu0RI7bgy1ucBA2Yqcfg539y0Lzo38P2hIkrRB1GNvFSbYg6RTu8n6tGqPVrH3TTlPTNKLXG01wc+5NuwQ==
   dependencies:
     glob "7.1.7"
-
-"@next/font@13.4.6":
-  version "13.4.6"
-  resolved "https://registry.yarnpkg.com/@next/font/-/font-13.4.6.tgz#76ac7a3a566e8dbceab821a99bfa9face7d59ed9"
-  integrity sha512-Pjm6B6f4KWr4kWe7yu2trLtwQPco/wLSOzWeD7bW17Sd209ibrhRwbSggvlAt1FJu8K4ag2xtVg8WfRFbON1mw==
 
 "@next/swc-darwin-arm64@13.4.6":
   version "13.4.6"

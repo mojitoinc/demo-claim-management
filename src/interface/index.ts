@@ -163,31 +163,3 @@ export interface ButtonNameProps {
   secondary: string;
   teritary: string;
 }
-
-interface NFTPrice {
-  value: number;
-  unit: string;
-  usdValue: string;
-}
-
-export interface UserDetail {
-  firstName: string;
-  lastName: string;
-  email: string;
-  checked: boolean;
-}
-
-export interface UserDetailError {
-  firstNameError: string;
-  lastNameError: string;
-  emailError: string;
-  checkedError: string;
-}
-
-export interface ClaimDetails {
-  id: string;
-  startDate: string;
-  endDate: string;
-  totalUnits: number;
-  totalAvailableUnits: number;
-}

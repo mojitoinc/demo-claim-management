@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -11,16 +11,11 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { ClaimTokenModal, useWallet } from "@mojito-inc/claim-management";
 import { RuntimeConfiguration } from "@/configuration";
-import { ClaimDetails } from "@/interface";
-import { useAuction } from "@mojito-inc/core-service";
 import { useAuthDetails } from "@/provider/AuthProvider";
 
 const FormLayout = () => {
-  const { auctionDetails } = useAuction();
   const { address } = useWallet();
   const { authDetails, setAuthDetails } = useAuthDetails();
-
-  const [claimDetails, setClaimDetails] = useState<ClaimDetails>();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -37,30 +32,6 @@ const FormLayout = () => {
   const [openModal, setOpenModal] = useState(false);
   const [disconnect, setDisconnect] = useState(false);
   const [showBuyButton, setShowBuyButton] = useState(false);
-
-  const getClaimedData = useCallback(async () => {
-    try {
-      const response = await auctionDetails(
-        {
-          id: listingId,
-        },
-        { fetchPolicy: "no-cache" }
-      );
-      setClaimDetails(response?.data?.collectionItemById?.details);
-      return response?.data?.collectionItemById;
-    } catch (error: any) {
-      if (error?.message?.includes("jwt token invalid")) {
-        sessionStorage?.clear();
-      }
-      return null;
-    }
-  }, [auctionDetails, listingId]);
-
-  useEffect(() => {
-    if (listingId) {
-      getClaimedData();
-    }
-  }, [listingId, getClaimedData]);
 
   useEffect(() => {
     if (disconnect) {

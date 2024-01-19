@@ -6,23 +6,23 @@ export const createStyles = (theme: themeProps) => ({
   },
 
   "::-webkit-scrollbar-thumb": {
-    backgroundColor: theme?.color?.scrollBarGrey,
+    backgroundColor: '#616161',
     borderRadius: "6px",
   },
 
   "::-webkit-scrollbar-track": {
-    backgroundColor: theme?.color?.scrollBarBackground,
+    backgroundColor: '#616161',
   },
 
   "html, body": {
-    fontFamily: theme.fontFamily.teritary,
+    fontFamily: 'Sneak',
     minHeight: "100vh",
     margin: 0,
-    background: theme.color.primary,
+    background: '#fff',
   },
 
   body: {
-    fontFamily: theme.fontFamily.teritary,
+    fontFamily: 'Sneak',
     overflowY: "scroll",
   },
 });
