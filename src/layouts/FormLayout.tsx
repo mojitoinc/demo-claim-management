@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -11,17 +11,24 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { ClaimTokenModal, useWallet } from "@mojito-inc/claim-management";
 import { RuntimeConfiguration } from "@/configuration";
+import { useAuction } from "@mojito-inc/core-service";
 import { useAuthDetails } from "@/provider/AuthProvider";
+import router from "next/router";
 
 const FormLayout = () => {
-  const { address } = useWallet();
+  const { auctionDetails } = useAuction();
+  const { address, networkDetails } = useWallet();
   const { authDetails, setAuthDetails } = useAuthDetails();
+
+  const [claimDetails, setClaimDetails] = useState<any>();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [loginWithPersonalInformation, setLoginWithPersonalInformation] =
     useState(false);
   const [listingId, setListingId] = useState("");
+  const [lotId, setLotId] = useState("");
+  const [invoiceId, setInvoiceId] = useState("");
   const [ruleId, setRuleId] = useState("");
   const [groupId, setGroupId] = useState("");
   const [claimCode, setClaimCode] = useState("");
@@ -32,6 +39,32 @@ const FormLayout = () => {
   const [openModal, setOpenModal] = useState(false);
   const [disconnect, setDisconnect] = useState(false);
   const [showBuyButton, setShowBuyButton] = useState(false);
+  const [enableMixersBuyNow, setEnableMixersBuyNow] = useState(false);
+  const [enableMixersAuction, setEnableMixersAuction] = useState(false);
+
+  const getClaimedData = useCallback(async () => {
+    try {
+      const response = await auctionDetails(
+        {
+          id: listingId,
+        },
+        { fetchPolicy: "no-cache" }
+      );
+      setClaimDetails(response?.data?.collectionItemById?.details);
+      return response?.data?.collectionItemById;
+    } catch (error: any) {
+      if (error?.message?.includes("jwt token invalid")) {
+        sessionStorage?.clear();
+      }
+      return null;
+    }
+  }, [auctionDetails, listingId]);
+
+  useEffect(() => {
+    if (listingId) {
+      getClaimedData();
+    }
+  }, [listingId, getClaimedData]);
 
   useEffect(() => {
     if (disconnect) {
@@ -57,6 +90,14 @@ const FormLayout = () => {
 
   const onChangeListingId = (e: ChangeEvent<HTMLInputElement>) => {
     setListingId(e.target.value);
+  };
+
+  const onChangeLotId = (e: ChangeEvent<HTMLInputElement>) => {
+    setLotId(e.target.value);
+  };
+
+  const onChangeInvoiceId = (e: ChangeEvent<HTMLInputElement>) => {
+    setInvoiceId(e.target.value);
   };
 
   const onChangeRuleId = (e: ChangeEvent<HTMLInputElement>) => {
@@ -91,6 +132,15 @@ const FormLayout = () => {
     setClaimCode(e.target.value);
   };
 
+  const onChangeEnableMixersBuyNow = (e: ChangeEvent<HTMLInputElement>) => {
+    setEnableMixersBuyNow(e.target.checked);
+  };
+
+  const onChangeEnableMixersAuction = (e: ChangeEvent<HTMLInputElement>) => {
+    setEnableMixersAuction(e.target.checked);
+  };
+
+
   const handleOpenModal = () => {
     setOpenModal(true);
   };
@@ -116,6 +166,10 @@ const FormLayout = () => {
       orgId: e.target.value,
     }));
   };
+
+  const onClickGoToMarketPlace = useCallback(() => {
+    router.replace('/');
+  }, []);
 
   return (
     <div
@@ -163,6 +217,28 @@ const FormLayout = () => {
           </Select>
         </FormControl>
       </Stack>
+      <Stack>
+      <FormGroup sx={{ display: { sm: "block", lg: "flex" }, gap: "20px" }}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={enableMixersBuyNow}
+                onChange={onChangeEnableMixersBuyNow}
+              />
+            }
+            label="Enable Mixers Buy Now"
+          />
+          <FormControlLabel
+            control={
+              <Switch
+                checked={enableMixersAuction}
+                onChange={onChangeEnableMixersAuction}
+              />
+            }
+            label="Enable Mixers Auction"
+          />
+      </FormGroup>
+      </Stack>
       <Stack
         sx={{ marginBottom: "20px" }}
         gap="20px"
@@ -188,8 +264,18 @@ const FormLayout = () => {
           onChange={onChangeListingId}
           placeholder="Enter listing id"
         />
+        { (enableMixersBuyNow || enableMixersAuction) && <TextField
+          value={lotId}
+          onChange={onChangeLotId}
+          placeholder="Enter lot id"
+        />}
+        { enableMixersAuction && <TextField
+          value={invoiceId}
+          onChange={onChangeInvoiceId}
+          placeholder="Enter Invoice id"
+        />}
       </Stack>
-      <Stack sx={{ marginBottom: "20px" }}>
+      { (!enableMixersBuyNow && !enableMixersAuction) && <Stack sx={{ marginBottom: "20px" }}>
         <FormGroup sx={{ display: { sm: "block", lg: "flex" }, gap: "20px" }}>
           <FormControlLabel
             control={
@@ -245,7 +331,7 @@ const FormLayout = () => {
             />
           )}
         </FormGroup>
-      </Stack>
+      </Stack> }
       {(isTokenGating || isNegativeTokenGating) && (
         <Stack
           sx={{ marginBottom: "20px" }}
@@ -265,7 +351,7 @@ const FormLayout = () => {
         </Stack>
       )}
       <Stack sx={{ marginBottom: "20px" }} gap="20px" direction="column">
-        {!isEnterCode && !(isTokenGating || isNegativeTokenGating) && (
+        {!isEnterCode && !(isTokenGating || isNegativeTokenGating || enableMixersBuyNow || enableMixersAuction) && (
           <TextField
             sx={{ marginBottom: "20px" }}
             value={claimCode}
@@ -277,38 +363,32 @@ const FormLayout = () => {
         {address && <Button onClick={handleDisconnect}>Disconnect</Button>}
       </Stack>
       <ClaimTokenModal
-        open={openModal}
-        skipClaimModal={false}
-        onCloseModal={handleCloseModal}
+        open={ openModal }
+        skipClaimModal={ false }
+        onCloseModal={ handleCloseModal }
         firstName={name}
         lastName={lastName}
         loginWithPersonalInformation={loginWithPersonalInformation}
         userEmail={email}
         isClaimWithGas={isClaimWithGas}
+        config={{
+          chainId: Number(RuntimeConfiguration.CHAIN_ID) ?? 11155111,
+          crossmintApiKey: RuntimeConfiguration.CROSSMINT_API ?? '',
+          orgId: authDetails?.orgId,
+          crossmintEnv: RuntimeConfiguration.CROSSMINT_ENV ?? '',
+          paperClientId: RuntimeConfiguration.PAPER_CLIENT_ID ?? '',
+          paperNetworkName: RuntimeConfiguration.NETWORK_NAME ?? '',
+        }}
         claimType={
           isTokenGating
-            ? "TokenGating"
-            : isEnterCode
-            ? "CustomCode"
-            : isNegativeTokenGating
-            ? "NegativeTokenGating"
-            : "NoCode"
+        ? "TokenGating"
+        : isEnterCode
+        ? "CustomCode"
+        : enableMixersAuction || enableMixersBuyNow
+        ? "BuyNow"
+        : "NoCode"
         }
-        config={{
-          crossmintApiKey: RuntimeConfiguration.CROSSMINT_API ?? "",
-          crossmintEnv: RuntimeConfiguration?.CROSSMINT_ENV ?? "",
-          orgId: authDetails?.orgId,
-          chainId: Number(RuntimeConfiguration.CHAIN_ID) ?? 4,
-          paperClientId: RuntimeConfiguration.PAPER_CLIENT_ID ?? "",
-          paperNetworkName: RuntimeConfiguration.NETWORK_NAME ?? "",
-        }}
-        isDisConnect={disconnect}
-        walletOptions={{
-          enableCrossmint: false,
-          enableMetamask: true,
-          enablePaper: true,
-          enableWalletConnect: true,
-        }}
+        isDisConnect={ disconnect }
         listingId={listingId}
         claimCode={claimCode}
         link={{
@@ -325,7 +405,26 @@ const FormLayout = () => {
         showBuyButton={showBuyButton}
         tokenName={"Test"}
         onSuccess={handleCloseModal}
-      />
+        mixersConfig={{
+          lotId: lotId,
+          walletOptions: {
+            enableMetamask: true,
+            enableWalletConnect: true,
+            enableEmailWallet: true
+          },
+          paymentId: '',
+          invoiceId: invoiceId,
+          discountCode: '',
+          checkOutApiKey: 'pk_sbox_snvdtl3vfybgh7msvch7ni2gpan',
+          paymentOptions: {
+            creditCard: true,
+            walletConnect: true,
+            wire: true,
+          },
+          errorPageUrl: '',
+          successPageUrl: '',
+          onClickGoToMarketPlace,
+        }} />
     </div>
   );
 };
