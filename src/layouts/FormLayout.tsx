@@ -421,8 +421,8 @@ const FormLayout = () => {
             walletConnect: true,
             wire: true,
           },
-          errorPageUrl: '',
-          successPageUrl: '',
+          errorPageUrl: 'https://claim-management-demo.netlify.app/payments/failure',
+          successPageUrl: 'https://claim-management-demo.netlify.app/payments/success',
           onClickGoToMarketPlace,
         }} />
     </div>

@@ -8,6 +8,7 @@ import "../theme/fonts.css";
 import { StorageService } from "@/services";
 import { AuthDetailsProvider } from "@/provider/AuthProvider";
 import ClaimProvider from "@/provider/ClaimProvider";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [wallet, setWallet] = useState<WalletData>({} as WalletData);
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <AuthDetailsProvider>
         <WalletContext.Provider value={{ wallet, setWallet }}>
+        <Script src="https://cdn.checkout.com/js/framesv2.min.js" />
           <Head>
             <title>Mojito claim demo</title>
             <meta name="description" content="Mojito claim demo" />
