@@ -2185,14 +2185,14 @@
     semver "^7.3.8"
     superstruct "^1.0.3"
 
-"@mojito-inc/claim-management@1.0.2-beta.50":
-  version "1.0.2-beta.50"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.50.tgz#b3581018403e157170179084e870cd0d3690a202"
-  integrity sha512-IkZ08dFEu1ta8MRL1cjZfzQbrOxGwgpk93tlySn+HUYfpN2rL8heKb4ri+nv2slhuL8LE67SBf+wZJ0iyrFSMw==
+"@mojito-inc/claim-management@1.0.2-beta.62":
+  version "1.0.2-beta.62"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/claim-management/-/claim-management-1.0.2-beta.62.tgz#be55b8af477fd201b5c5ca81d2cef6f023941b21"
+  integrity sha512-wlaqBfc1HxQiBLYwrzDcnK7N1dKoE0a/zcsDsQ0LIHflY3z9K4oB0W+ER19f87GAi28eEdSUYeZZG092KqX+CQ==
   dependencies:
     "@apollo/client" "^3.7.15"
     "@crossmint/connect" "^0.0.8"
-    "@mojito-inc/core-service" "^1.0.8-beta.19"
+    "@mojito-inc/core-service" "^1.0.8-beta.21"
     "@mojito-inc/mixers" "^1.0.3-beta.1"
     "@mui/icons-material" "^5.11.11"
     "@mui/material" "^5.11.11"
@@ -2241,10 +2241,10 @@
   resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.18.tgz#f6343dcafe32440210fe2bd0a71fcd08d7beee53"
   integrity sha512-K3bLgFoA7uPi+yZuRJfRGCY3pcxwkBwpgmCpXSCXWWKt2e3fsabWWExxThIzCuesxyr8+CP41oxuqj32XYSlZQ==
 
-"@mojito-inc/core-service@^1.0.8-beta.19":
-  version "1.0.8-beta.19"
-  resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.19.tgz#cf5a895c3f13302d04d72179759394210cdcfff7"
-  integrity sha512-KqPV/vl5R1bDFh0kkdIsVouhGtBpvnbTjeK7GBSfXx07cERno4Rahqb5XWEdZcIni5mBQlU1YFGf2y0b8VdVqQ==
+"@mojito-inc/core-service@^1.0.8-beta.21":
+  version "1.0.8-beta.21"
+  resolved "https://registry.yarnpkg.com/@mojito-inc/core-service/-/core-service-1.0.8-beta.21.tgz#2e955471edab4f0d99327a57367d93eed76a14a6"
+  integrity sha512-BoQo9I2YcccsAdPORtkhgwExVz30ZOAO4rRfu+Kec9FgU4UzQuf4l3CrPTqkPCYqnQlbjPlY0pT09Ah7SPO5ag==
 
 "@mojito-inc/mixers@^1.0.3-beta.1":
   version "1.0.3-beta.1"
