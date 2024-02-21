@@ -24,8 +24,8 @@ export function useAuthDetails() {
 
 export const AuthDetailsProvider = ({ children }: AuthDetailsProviderProps) => {
   const [authDetails, setAuthDetails] = useState<ConnectType>({
-    apiDomain: "https://api.mojito.xyz/query",
-    orgId: "992125dd-41e5-44ba-9d77-edc7dac12eca",
+    apiDomain: "https://api-sandbox.mojito.xyz/query",
+    orgId: "5a198d09-e243-491f-991a-f79e1cecdcc3",
   });
 
   const contextValue = useMemo(
